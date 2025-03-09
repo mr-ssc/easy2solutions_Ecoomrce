@@ -62,7 +62,7 @@ const Footer = () => {
       <button className={`scroll-to-top ${isDarkMode ? "dark-mode" : ""}`} onClick={scrollToTop}>
         <i className="fas fa-arrow-up"></i> {/* FontAwesome CDN icon */}
       </button>
-<p>Hello</p>
+
 
     </footer>
 
