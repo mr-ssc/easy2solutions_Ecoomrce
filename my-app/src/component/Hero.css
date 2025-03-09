@@ -1,0 +1,89 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 2000px;
+    overflow: hidden;
+    position: relative;
+    max-height: 700px;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: auto; /* Make the height auto to maintain aspect ratio */
+    max-height: 700px; /* Set a max height to ensure it doesn't exceed the container */
+    object-fit: contain; /* Ensure the image fits within the container without cropping */
+}
+
+.prev-btn,
+.next-btn {
+    display: none; /* Initially hide the buttons */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Adjust the position of the buttons to be below the images */
+.hero .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.hero .button-container button {
+    margin: 0 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .slide img {
+        height: auto; /* Ensure the image height is auto on smaller screens */
+    }
+
+    .prev-btn,
+    .next-btn {
+        display: none; /* Show the buttons on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        max-height: 500px; /* Adjust the max height for smaller screens */
+    }
+
+    .prev-btn,
+    .next-btn {
+        display: none; /* Show the buttons on smaller screens */
+    }
+
+    .slide img {
+        max-height: 500px; /* Adjust the max height for smaller screens */
+    }
+}

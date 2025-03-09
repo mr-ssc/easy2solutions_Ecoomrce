@@ -1,0 +1,103 @@
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.contact-container.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.contact-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-container p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-form .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    /* Added for icon positioning */
+}
+
+.contact-form .form-group i {
+    position: absolute;
+    /* Position the icon absolutely */
+    left: 10px;
+    /* Adjust the left position */
+    font-size: 18px;
+    color: #666;
+    /* Default icon color */
+    margin-top: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    /* Add left padding for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+
+
+
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dark Mode Styles */
+.contact-container.dark-mode input,
+.contact-container.dark-mode select,
+.contact-container.dark-mode textarea {
+    background-color: #444;
+    color: #fff;
+    border-color: #555;
+}
+
+.contact-container.dark-mode .form-group i {
+    color: #aaa;
+    /* Adjust icon color for dark mode */
+}
+
+.contact-container.dark-mode .submit-btn {
+    background-color: #555;
+}
+
+.contact-container.dark-mode .submit-btn:hover {
+    background-color: #777;
+}

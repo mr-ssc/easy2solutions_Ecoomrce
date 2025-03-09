@@ -1,0 +1,82 @@
+/* Light Mode Styles */
+.signin-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+.signin-container h2 {
+    margin-bottom: 20px;
+}
+
+.signin-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+.signin-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signin-container button:hover {
+    background-color: #0056b3;
+}
+
+.signin-container p {
+    margin-top: 10px;
+}
+
+.signin-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signin-container a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+.signin-container.dark-mode {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+.signin-container.dark-mode input {
+    background-color: #444;
+    color: #fff;
+    border-color: #555;
+}
+
+.signin-container.dark-mode button {
+    background-color: #0056b3;
+}
+
+.signin-container.dark-mode button:hover {
+    background-color: #004080;
+}
+
+.signin-container.dark-mode a {
+    color: #1e90ff;
+}
+
+.signin-container.dark-mode a:hover {
+    color: #007bff;
+}

@@ -1,0 +1,28 @@
+.account-container {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-container.dark-mode {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.signout-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.signout-button:hover {
+  background-color: darkred;
+}
