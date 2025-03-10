@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Navbar.css";
 import logo from "../component/Img/Easy2Solutions.png";
 import { DarkModeContext } from "../component/DarkModeContext";
@@ -7,18 +7,25 @@ import { DarkModeContext } from "../component/DarkModeContext";
 const Navbar = () => {
   const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+  // Check user authentication status (Fetch from localStorage or Firebase)
   useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("dark-mode");
+    const user = localStorage.getItem("user"); // Check if user data exists
+    if (user) {
+      setIsAuthenticated(true);
     } else {
-      document.body.classList.remove("dark-mode");
+      setIsAuthenticated(false);
     }
-  }, [isDarkMode]);
+  }, []);
+
+  const handleCartClick = (e) => {
+    if (!isAuthenticated) {
+      e.preventDefault(); // Prevent navigation
+      navigate("/signin"); // Redirect to sign-in page
+    }
+  };
 
   return (
     <nav className={`navbar ${isDarkMode ? "dark-mode" : ""}`}>
@@ -38,7 +45,7 @@ const Navbar = () => {
       </div>
 
       {/* Hamburger Menu for Mobile */}
-      <div className="navbar-toggle" onClick={toggleMenu}>
+      <div className="navbar-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <i className={isMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
 
@@ -51,7 +58,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-item">
-          <Link className="navbar-item" to="/Cart">
+          <Link className="navbar-item" to="/Cart" onClick={handleCartClick}>
             <i className="fas fa-shopping-cart"></i>
             <span>Cart</span>
           </Link>
