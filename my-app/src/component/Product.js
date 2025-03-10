@@ -31,7 +31,6 @@ const Product = () => {
     const updatedCart = [...cartItems, product];
     setCartItems(updatedCart);
     saveCartToLocalStorage(updatedCart); // Save cart to localStorage
-    navigate("/Cart", { state: { cartItems: updatedCart } });
   };
 
   const buyNow = (product) => {
