@@ -76,6 +76,12 @@ const Cart = () => {
     navigate("/Order", { state: { product } });
   };
 
+  const buyAll = () => {
+    if (cartItems.length > 0) {
+      navigate("/Order", { state: { product: cartItems } });
+    }
+  };
+
   return (
     <>
       <Navbar toggleTheme={toggleDarkMode} theme={isDarkMode ? 'dark' : 'light'} />
@@ -122,6 +128,7 @@ const Cart = () => {
               </tbody>
             </table>
             <h4>Total Price: ${calculateTotalPrice().toFixed(2)}</h4>
+            <button className="buy-all-btn" onClick={buyAll}>Buy All</button>
             <button className="back-to-products-btn" onClick={() => navigate('/')}>Back to Products</button>
           </>
         )}
